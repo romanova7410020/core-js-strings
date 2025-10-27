@@ -209,14 +209,6 @@ function sumOfCodes(str) {
   return sum;
 }
 
-// function sumOfCodes(str) {
-// let sum = 0;
-// for (let i = 0; i < str.length; i += 1) {
-//   sum += str.charCodeAt(i);
-// }
-// return sum;
-// }
-
 /**
  * Checks if a string starts with a specific substring.
  *
@@ -493,8 +485,11 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str
+    .split(';')
+    .map((email) => email.trim())
+    .filter((email) => email.length > 0);
 }
 
 /**
